@@ -14,7 +14,7 @@ This tutorial assumes that you already have a fully functioning K8s cluster, and
 docker build --platform=linux/amd64 -t custom-metrics-experiment ./
 
 # In my case I use ECR, and these are my own steps
-docker tag clamav-scanner xxxxxxxxxxxx.dkr.ecr.eu-west-1.amazonaws.com/custom-metrics-experiment:latest
+docker tag custom-metrics-experiment xxxxxxxxxxxx.dkr.ecr.eu-west-1.amazonaws.com/custom-metrics-experiment:latest
 
 docker push xxxxxxxxxxxx.dkr.ecr.eu-west-1.amazonaws.com/custom-metrics-experiment:latest
 ```
