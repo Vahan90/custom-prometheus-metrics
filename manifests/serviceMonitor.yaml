@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: custom-metrics-experiment
+    prometheus: custom-metrics-experiment
+  name: custom-metrics-experiment
+spec:
+  endpoints:
+  - interval: 60s
+    path: /metrics
+    scrapeTimeout: 30s
+    targetPort: 3000
+  jobLabel: custom-metrics-experiment
+  selector:
+    matchLabels:
+      app: custom-metrics-experiment

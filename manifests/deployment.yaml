@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: custom-metrics-experiment
+  name: custom-metrics-experiment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: custom-metrics-experiment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: custom-metrics-experiment
+    spec:
+      containers:
+      - image: 496014204152.dkr.ecr.eu-west-1.amazonaws.com/custom-metrics-experiment:latest
+        name: custom-metrics-experiment
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "128Mi"
+          limits:
+            cpu: "10m"
+            memory: "128Mi"
+        ports:
+        - name: node
+          containerPort: 3000
